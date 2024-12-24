@@ -1,0 +1,12 @@
+PREREQUIREMENTS
+1. linux machine (ubuntu)
+2. AWS account
+3. kops binary (kubernetes cluster initiate)
+4. kubectl binary (kubernetes deployments)
+
+KOPS BINARY SETUP
+
+KOPS BINARY SETUP
+   # curl -Lo kops https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '"' -f 4)/kops-linux-amd64
+   # chmod +x ./kops
+   # sudo mv ./kops /usr/local/bin/
