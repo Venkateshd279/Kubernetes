@@ -46,3 +46,27 @@ Because "aws configure" doesn't export these vars for kops to use, we export the
 
    # export AWS_ACCESS_KEY_ID=$(aws configure get aws_access_key_id)
    # export AWS_SECRET_ACCESS_KEY=$(aws configure get aws_secret_access_key)
+
+
+Prepare local environment
+
+We're ready to start creating our first cluster! Let's first set up a few environment variables to make this process easier.
+# export NAME=venkat.k8s.local
+# export KOPS_STATE_STORE=s3://bucket-name
+
+
+# kops create cluster --zones ap-south-1a ${NAME}
+
+kops cluster details and initiate machanisam:
+   LIST CLUSTER DETAILS
+
+          # kops get cluster
+VALIDATE CLUSTER
+
+          # kops validate cluster
+
+#kops delete cluster --name=venkat.k8s.local --state=s3://bucket-name –yes
+
+
+
+
