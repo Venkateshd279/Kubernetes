@@ -1,8 +1,7 @@
 # USING THE KOPS METHOD CREATE A KUBERNETES CLUSTER 
 
-https://drive.google.com/file/d/174hu4SZa1pCvQFPm3O0l3TRctWta-oWX/view?usp=drive_link
+![Sample Image](https://drive.google.com/uc?export=view&id=174hu4SZa1pCvQFPm3O0l3TRctWta-oWX)
 
-<img src="https://drive.google.com/file/d/174hu4SZa1pCvQFPm3O0l3TRctWta-oWX/view?usp=drive_link" alt="Kops setup" width="200"/>
  
 
 ## REQUIREMENTS
