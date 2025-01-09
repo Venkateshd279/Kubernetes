@@ -33,6 +33,7 @@ This repo contains kubernetes related stuff.
 
 In order to build clusters within AWS we'll create a dedicated IAM user for kops. This user requires API credentials in order to use kops. Create the user, and credentials, using the AWS console.
 The kops user will require the following IAM permissions to function properly: or You can create now with admin access for testing.
+  
    1. AmazonEC2FullAccess
    2. AmazonRoute53FullAccess
    3. AmazonS3FullAccess
@@ -41,7 +42,9 @@ The kops user will require the following IAM permissions to function properly: o
    
 
 ## configure the aws client to use your new IAM user
+    
     aws configure            Use your new access and secret key here
+    
     aws iam list-users       you should see a list of all your IAM users here
 
 
@@ -66,5 +69,5 @@ The kops user will require the following IAM permissions to function properly: o
 ### VALIDATE CLUSTER
   kops validate cluster
 
- ### To Delete the cluster 
+ ### DELETE CLUSTER 
  kops delete cluster --name=venkat.k8s.local --state=s3://bucket-name –yes
