@@ -1,4 +1,8 @@
 # USING THE KOPS METHOD CREATE A KUBERNETES CLUSTER 
+
+https://drive.google.com/file/d/174hu4SZa1pCvQFPm3O0l3TRctWta-oWX/view?usp=drive_link
+
+<img src="https://drive.google.com/file/d/174hu4SZa1pCvQFPm3O0l3TRctWta-oWX/view?usp=drive_link" alt="Kops setup" width="200"/>
  
 
 ## REQUIREMENTS
@@ -77,6 +81,8 @@ The kops user will require the following IAM permissions to function properly: o
  export NAME=venkat.k8s.local
  
  export KOPS_STATE_STORE=s3://bucket-name
+
+### CREATE KOPS CLUSTER SINGLE ZONE 
  
  kops create cluster --zones ap-south-1a ${NAME}
  
