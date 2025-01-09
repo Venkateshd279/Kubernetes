@@ -53,8 +53,11 @@ The kops user will require the following IAM permissions to function properly: o
 ## Prepare local environment
 
 ### We're ready to start creating our first cluster! Let's first set up a few environment variables to make this process easier.
+ 
  export NAME=venkat.k8s.local
+ 
  export KOPS_STATE_STORE=s3://bucket-name
+ 
  kops create cluster --zones ap-south-1a ${NAME}
  
 ### LIST CLUSTER DETAILS
