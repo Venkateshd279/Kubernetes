@@ -8,9 +8,13 @@ This repo contains kubernetes related stuff.
 4. kubectl binary (kubernetes deployments)
 
 
-### KOPS BINARY SETUP
+## KOPS BINARY SETUP
+###  Download the latest Kops binary:
    curl -Lo kops https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '"' -f 4)/kops-linux-amd64
+### Make the binary executable:
    chmod +x ./kops
+
+### Move the binary to a directory in your PATH:
    sudo mv ./kops /usr/local/bin/
 
 ## KUBECTL BINARY SETUP
