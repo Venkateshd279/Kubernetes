@@ -49,8 +49,9 @@ The kops user will require the following IAM permissions to function properly: o
 
 
 
-   ### export AWS_ACCESS_KEY_ID=$(aws configure get aws_access_key_id)
-   ### export AWS_SECRET_ACCESS_KEY=$(aws configure get aws_secret_access_key)
+   export AWS_ACCESS_KEY_ID=$(aws configure get aws_access_key_id)
+   
+   export AWS_SECRET_ACCESS_KEY=$(aws configure get aws_secret_access_key)
 
 
 ## Prepare local environment
