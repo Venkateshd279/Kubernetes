@@ -1,11 +1,11 @@
-# Kubernetes
-This repo contains kubernetes related stuff. 
+# USING THE KOPS METHOD CREATE A KUBERNETES CLUSTER 
+ 
 
-## PREREQUIREMENTS
-1. linux machine (ubuntu)
+## REQUIREMENTS
+1. Linux machine (ubuntu)
 2. AWS account
-3. kops binary (kubernetes cluster initiate)
-4. kubectl binary (kubernetes deployments)
+3. kops binary (Kubernetes cluster initiate)
+4. kubectl binary (Kubernetes deployments)
 
 
 ## KOPS BINARY SETUP
@@ -29,9 +29,9 @@ This repo contains kubernetes related stuff.
    sudo mv ./kubectl /usr/local/bin/kubectl
 
 ## SETUP IAM USER (kops access aws resources)
-### This is awscli commands working methods. kindly configure aws-cli packages in your linux machines.
+### This is the working method for AWS CLI commands. Kindly configure aws-cli packages for your Linux machines.
 
-In order to build clusters within AWS we'll create a dedicated IAM user for kops. This user requires API credentials in order to use kops. Create the user, and credentials, using the AWS console.
+To build clusters within AWS, we'll create a dedicated IAM user for Kops. This user requires API credentials to use Kops. Create the user and credentials using the AWS console.
 The kops user will require the following IAM permissions to function properly: or You can create now with admin access for testing.
   
    1. AmazonEC2FullAccess
@@ -41,7 +41,7 @@ The kops user will require the following IAM permissions to function properly: o
    5. AmazonVPCFullAccess
    
 
-## configure the aws client to use your new IAM user
+## Configure the AWS client to use your new IAM user
     
     aws configure            Use your new access and secret key here
     
