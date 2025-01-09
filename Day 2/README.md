@@ -7,6 +7,22 @@
 3. kops binary (Kubernetes cluster initiate)
 4. kubectl binary (Kubernetes deployments)
 
+## Update the Ubuntu Server 
+  sudo apt-get update -y
+
+## Need to install unzip 
+  sudo apt install unzip -y
+
+## To install the AWS CLI, run the following commands.
+
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+
+## Unzip the awscli 
+unzip awscliv2.zip
+
+## Install the awscli
+sudo ./aws/install
+
 
 ## KOPS BINARY SETUP
 ### 1. Download the latest Kops binary:
