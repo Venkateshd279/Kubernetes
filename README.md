@@ -20,13 +20,13 @@ This repo contains kubernetes related stuff.
 
 ## KUBECTL BINARY SETUP
 ### 1. Download the latest Kubectl binary:
-   # curl -Lo kubectl https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+   curl -Lo kubectl https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
 
 ### 2. Make the binary executable:
-   # chmod +x ./kubectl
+   chmod +x ./kubectl
 
 ### 3. Move the binary to a directory in your PATH:
-   # sudo mv ./kubectl /usr/local/bin/kubectl
+   sudo mv ./kubectl /usr/local/bin/kubectl
 
 ## SETUP IAM USER (kops access aws resources)
 ### This is awscli commands working methods. kindly configure aws-cli packages in your linux machines.
