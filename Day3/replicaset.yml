@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  name: httpd-pod
+  name: replicas-pod
   namespace: dev
 spec:
   replicas: 3
