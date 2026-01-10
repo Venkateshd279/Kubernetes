@@ -54,4 +54,25 @@ c. Attach the required Amazon EKS managed IAM policy to the role.
   --role-name myAmazonEKSClusterRole
 ```
 
+## Create EKS cluster 
+
+```text 
+    cluster name: my-cluster
+    Cluster Service Role: myAmazonEKSClusterRole
+    Choose Next
+
+    VPC: * | my-eks-vpc-stack-VPC
+    subnet: * | my-eks-vpc-stack-*
+    Security group: * | my-eks-vpc-stack-ControlPlaneSecurityGroup-*
+    Next
+
+    On the Configure observability page, choose Next.
+
+    On the Select add-ons page, choose Next.
+
+    On the Configure selected add-ons settings page, choose Next.
+
+    On the Review and create page, choose Create.
+```
+
 
