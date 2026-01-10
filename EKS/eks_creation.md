@@ -7,16 +7,13 @@
 - Required IAM role 
 
 ```bash 
-    aws sts get-caller-identity
+aws sts get-caller-identity
 ```
 
 ## Step 1: Create your Amazon EKS cluster
 
 ```bash 
-    aws cloudformation create-stack \
-  --region us-east-1 \
-  --stack-name my-eks-vpc-stack \
-  --template-url https://s3.us-west-2.amazonaws.com/amazon-eks/cloudformation/2020-10-29/amazon-eks-vpc-private-subnets.yaml
+aws cloudformation create-stack --region us-east-1 --stack-name my-eks-vpc-stack --template-url https://s3.us-west-2.amazonaws.com/amazon-eks/cloudformation/2020-10-29/amazon-eks-vpc-private-subnets.yaml
 ```
 
 ## Step 2: Create IAM policies 
@@ -41,17 +38,13 @@ Copy the following contents to a file named `eks-cluster-role-trust-policy.json`
 b. create role 
 
 ```bash 
-    aws iam create-role \
-  --role-name myAmazonEKSClusterRole \
-  --assume-role-policy-document file://"eks-cluster-role-trust-policy.json"
+aws iam create-role --role-name myAmazonEKSClusterRole --assume-role-policy-document file://"eks-cluster-role-trust-policy.json"
 ```
 
 c. Attach the required Amazon EKS managed IAM policy to the role.
 
 ```bash 
-    aws iam attach-role-policy \
-  --policy-arn arn:aws:iam::aws:policy/AmazonEKSClusterPolicy \
-  --role-name myAmazonEKSClusterRole
+aws iam attach-role-policy --policy-arn arn:aws:iam::aws:policy/AmazonEKSClusterPolicy --role-name myAmazonEKSClusterRole
 ```
 
 ## Step 3: Create EKS cluster 
@@ -69,13 +62,13 @@ c. Attach the required Amazon EKS managed IAM policy to the role.
 ## Step 4: Connect your EKS cluster 
 
 ```bash 
-    aws eks update-kubeconfig --region us-east-1 --name my-cluster
+aws eks update-kubeconfig --region us-east-1 --name my-cluster
 ```
 
 ### 4.1 Test your connectivity
 
 ```bash
-    kubectl get svc
+kubectl get svc
 ```
 ```bash 
     #example output 
@@ -105,24 +98,21 @@ a. Copy the following contents to a file named `node-role-trust-policy.json`.
 b. Create the node IAM role.
 
 ```bash 
-    aws iam create-role \
-  --role-name myAmazonEKSNodeRole \
-  --assume-role-policy-document file://"node-role-trust-policy.json"
+aws iam create-role --role-name myAmazonEKSNodeRole --assume-role-policy-document file://"node-role-trust-policy.json"
 ```
 
 c. Attach the required managed IAM policies to the role.
 
 ```bash 
+aws iam attach-role-policy --policy-arn arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy --role-name myAmazonEKSNodeRole
+```
 
-    aws iam attach-role-policy \
-  --policy-arn arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy \
-  --role-name myAmazonEKSNodeRole
-aws iam attach-role-policy \
-  --policy-arn arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly \
-  --role-name myAmazonEKSNodeRole
-aws iam attach-role-policy \
-  --policy-arn arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy \
-  --role-name myAmazonEKSNodeRole
+```bash
+aws iam attach-role-policy --policy-arn arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly --role-name myAmazonEKSNodeRole
+```
+
+```bash 
+aws iam attach-role-policy --policy-arn arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy --role-name myAmazonEKSNodeRole
 ```
 
 ## Step 6: Create your nodegroup 
@@ -144,6 +134,3 @@ aws iam attach-role-policy \
 -   In the Delete my-eks-vpc-stack confirmation dialog box, choose Delete stack.
 -   Open IAM console [IAM](https://console.aws.amazon.com/iam/)
 -   Navigate to Roles `myAmazonEKSClusterRole ` and `myAmazonEKSNodeRole` delete it. 
-
-
-
